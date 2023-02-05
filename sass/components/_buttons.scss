@@ -1,0 +1,68 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    /* to move the transform */
+    /* refrence to the absolute position  */
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* box-shadow: x-axix yaxix blur color of shadow */
+    &::after {
+      /* to element to grow and fade out */
+      /* scale will increase the element */
+      transform: scaleX(1.5) scaleY(1.6);
+      /* to make invisible */
+      opacity: 0;
+    }
+  }
+
+  /*  when we click the button  */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &::after {
+    /* for the after affect we should specify centent property and display for the after
+   effect  */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    /* put after effect behind actual effect  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* define the position of the element  
+  if they are one on top of another*/
+    z-index: -1;
+    /* animitated on intial state*/
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInButtom 0.5s ease-out 0.75s;
+    /*  it will apply 0% effect before the animation start */
+    animation-fill-mode: backwards;
+  }
+}

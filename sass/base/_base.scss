@@ -1,0 +1,24 @@
+// basic defination of our project
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* it change the box model, so that the borders
+  and the padding are no longer added on the total height and weight
+  we specify for the box.*/
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */
+  /* default font size divide by font size we want i.e 10px so,
+  10/16 is 0.625 which is 62.5%  */
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+/* the body element will inherit to the child element */
+body {
+  box-sizing: border-box;
+}

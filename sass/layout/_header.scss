@@ -1,0 +1,45 @@
+.header {
+  /* it will cover the 95% height of the viewpoint
+   */
+  height: 95vh;
+  /* one folder back to the project folder and to the img folder */
+  background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    ),
+    url(../img/hero.jpg);
+  /*  cover does is that whatever the width of the viewport,
+  or the element it always try to fit the element inside the box*/
+  background-size: cover;
+  /* the img always remain in top of the container*/
+  background-position: top;
+  position: relative;
+  /* clip-path: polygon(x y, x y, x y,x y); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(50% 0, 100% 100%, 0 100%); */
+
+  &__logo-box {
+    position: absolute;
+    top: 4.8rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+  /* we use the animation in all the page */
+  /* .logo:hover {
+  animation: moveInRight 1s ease-out;
+} */
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* to align center translate relate with element itself not with the parent*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
